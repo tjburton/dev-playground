@@ -1,20 +1,20 @@
 // import { useState } from 'react';
 
 import './App.css';
-import Header from './components/Header';
+// import Header from './components/Header';
 import Container from './components/Container';
 import Sidebar from './components/Sidebar';
 import Basic1 from './pages/Basic 1';
+import { Fragment } from 'react';
 
 const App = () => {
-  // const [darkMode, setDarkMode] = useState(true);
-
   return (
-    <Container>
+    <Fragment>
       <Sidebar />
-      <Header />
-      <Basic1 />
-    </Container>
+      <Container>
+        <Basic1 />
+      </Container>
+    </Fragment>
   );
 };
 

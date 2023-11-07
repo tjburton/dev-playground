@@ -1,6 +1,6 @@
 const Header = () => {
   return (
-    <div className='flex absolute top-0 pt-5 min-w-[100vw] min-h-[2rem] justify-center space-x-24 mb-10'>
+    <div>
       <HeaderItem>Tailwind</HeaderItem>
       {
         // Maybe renaming to CSS and have sidebar sections for Tailwind, StyledComponents, etc.
@@ -20,9 +20,9 @@ const Header = () => {
 
 const HeaderItem = ({ children }: { children: string }) => {
   return (
-    <div className='group'>
+    <div>
       <a href='#'>{children}</a>
-      <div className='mx-1 mt-1 duration-200 border-b-2 border-slate-400 opacity-0 group-hover:opacity-100'></div>
+      <div></div>
     </div>
   );
 };

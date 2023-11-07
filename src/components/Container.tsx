@@ -1,13 +1,17 @@
 import { ReactNode } from 'react';
+import styled from 'styled-components';
 
-const Container = ({ isDark, children }: { isDark?: boolean; children: ReactNode }) => {
-  const background = isDark ? 'bg-slate-800' : 'bg-slate-100';
-
+const Container = ({ children }: { children: ReactNode }) => {
   return (
-    <div className={`flex flex-col ml-20 justify-center min-h-screen ${background}`}>
+    <StyledContainer>
       <div>{children}</div>
-    </div>
+    </StyledContainer>
   );
 };
+
+const StyledContainer = styled.main`
+  margin-left: 8rem;
+  padding: 1rem;
+`;
 
 export default Container;
