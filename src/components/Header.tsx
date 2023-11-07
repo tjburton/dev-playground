@@ -1,21 +1,19 @@
 const Header = () => {
   return (
-    <div className='flex'>
-      <div className='flex justify-center space-x-24 align-middle text-center ml-48 mb-10'>
-        <HeaderItem>Tailwind</HeaderItem>
-        {
-          // Maybe renaming to CSS and have sidebar sections for Tailwind, StyledComponents, etc.
-        }
-        <HeaderItem>Animation</HeaderItem>
-        <HeaderItem>Components</HeaderItem>
-        {
-          // Components will be the result of Tailwind practice and/ or animation
-        }
-        <HeaderItem>Javascript</HeaderItem>
-        {
-          // JavaScript will contain things like array methods, algorithms, react design patterns, etc.
-        }
-      </div>
+    <div className='flex absolute top-0 pt-5 min-w-[100vw] justify-center space-x-24 mb-10'>
+      <HeaderItem>Tailwind</HeaderItem>
+      {
+        // Maybe renaming to CSS and have sidebar sections for Tailwind, StyledComponents, etc.
+      }
+      <HeaderItem>Animation</HeaderItem>
+      <HeaderItem>Components</HeaderItem>
+      {
+        // Components will be the result of Tailwind practice and/ or animation
+      }
+      <HeaderItem>Javascript</HeaderItem>
+      {
+        // JavaScript will contain things like array methods, algorithms, react design patterns, etc.
+      }
     </div>
   );
 };
