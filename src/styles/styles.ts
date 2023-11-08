@@ -88,3 +88,5 @@ export const COLOURS = {
   neutral: NEURTAL,
   support: SUPPORT,
 };
+
+export const SIDEBAR_WIDTH = '4rem';

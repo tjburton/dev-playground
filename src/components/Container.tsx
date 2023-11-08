@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import styled from 'styled-components';
+import { SIDEBAR_WIDTH } from '../styles/styles';
 
 const Container = ({ children }: { children: ReactNode }) => {
   return (
@@ -10,7 +11,7 @@ const Container = ({ children }: { children: ReactNode }) => {
 };
 
 const StyledContainer = styled.main`
-  margin-left: 8rem;
+  margin-left: ${SIDEBAR_WIDTH};
   padding: 1rem;
 `;
 

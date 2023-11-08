@@ -1,22 +1,23 @@
 import { useState } from 'react';
-
-// import TailwindLogo from '../assets/Tailwind_CSS_Logo.svg';
-// import PlaygroundLogo from '../assets/pg-logo.png';
 import styled from 'styled-components';
-import { COLOURS } from '../styles/styles';
-import CodeRounded from '@mui/icons-material';
-import CssRounded from '@mui/icons-material';
-import GridViewRounded from '@mui/icons-material';
+import CodeRounded from '@mui/icons-material/CodeRounded';
+import ColorLensRoundedIcon from '@mui/icons-material/ColorLensRounded';
+import GridViewRounded from '@mui/icons-material/GridViewRounded';
 import WavingHandRoundedIcon from '@mui/icons-material/WavingHandRounded';
+import GamepadRoundedIcon from '@mui/icons-material/GamepadRounded';
+import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';
 
-const { primary } = COLOURS;
+import { COLOURS, SIDEBAR_WIDTH } from '../styles/styles';
+const { primary, secondary, neutral } = COLOURS;
 type SectionTypes = 'Tailwind' | 'Animation' | 'Components' | 'JavaScript';
 
 const sections = [
-  { id: 1, name: 'Tailwind', icon: `${CssRounded}` },
-  { id: 2, name: 'Animation', icon: `${WavingHandRoundedIcon}` },
-  { id: 3, name: 'Components', icon: `${CodeRounded}` },
-  { id: 4, name: 'JavaScript', icon: `${GridViewRounded}` },
+  { id: 1, name: 'Playground', icon: <GamepadRoundedIcon /> },
+  { id: 2, name: 'Tailwind', icon: <ColorLensRoundedIcon /> },
+  { id: 3, name: 'Animation', icon: <WavingHandRoundedIcon /> },
+  { id: 4, name: 'Components', icon: <GridViewRounded /> },
+  { id: 5, name: 'JavaScript', icon: <CodeRounded /> },
+  { id: 6, name: 'Theme', icon: <DarkModeRoundedIcon /> },
 ];
 
 const Sidebar = () => {
@@ -28,46 +29,87 @@ const Sidebar = () => {
 
   return (
     <SidebarContainer>
-      <StyledHeading>
-        <h1 className='text-xl'>Playground</h1>
-      </StyledHeading>
-
-      <div>
+      <StyledMenu>
         {sections.map(({ name, icon }) => {
           return (
-            <div>
-              <div>{icon}</div>
-              <div>{name}</div>
-            </div>
+            <StyledMenuItem key={name}>
+              <StyledIcon>{icon}</StyledIcon>
+              <StyledMenuHeading>{name.toUpperCase()}</StyledMenuHeading>
+            </StyledMenuItem>
           );
         })}
-      </div>
+      </StyledMenu>
     </SidebarContainer>
   );
 };
 
-const ImageLogo = ({
-  imgSrc,
-  heading,
-}: {
-  imgSrc: string;
-  heading: string;
-}) => <img src={imgSrc} alt={`${heading.toLowerCase()} logo`} />;
+const ImageLogo = ({ imgSrc, heading }: { imgSrc: string; heading: string }) => (
+  <img src={imgSrc} alt={`${heading.toLowerCase()} logo`} />
+);
 
-const StyledHeading = styled.h1`
-  background-color: ${primary[700]};
+const StyledMenuHeading = styled.div`
+  width: 5rem;
+  display: none;
+  color: ${neutral[50]};
+`;
+
+const StyledIcon = styled.div`
+  width: 2rem;
+  color: ${neutral[50]};
+`;
+
+const StyledMenuItem = styled.div`
+  display: flex;
+  height: 5rem;
+  align-items: center;
   width: 100%;
+  gap: 0.5rem;
+  color: ${primary[900]};
+  font-weight: 600;
+  padding-left: 1rem;
+
+  &:first-child {
+    background-color: ${primary[900]};
+    color: ${primary[50]};
+    font-weight: bold;
+  }
+
+  &:last-child {
+    position: absolute;
+    bottom: 0;
+    margin-top: auto;
+    background-color: ${primary[900]};
+    color: ${primary[50]};
+  }
+
+  &:hover {
+    background-color: ${primary[800]};
+  }
+
+  &:hover ${StyledIcon} {
+    color: ${secondary[400]};
+  }
+`;
+
+const StyledMenu = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const SidebarContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  min-width: 8rem;
+  position: fixed;
+  height: 100vh;
+  width: ${SIDEBAR_WIDTH};
   background-color: ${primary[500]};
-  align-items: center;
+
+  &:hover {
+    width: 12rem;
+  }
+
+  &:hover ${StyledMenuHeading} {
+    display: block;
+  }
 `;
 
 export default Sidebar;
