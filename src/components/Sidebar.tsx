@@ -1,17 +1,17 @@
-import { useState } from 'react';
 import styled from 'styled-components';
+
 import CodeRounded from '@mui/icons-material/CodeRounded';
 import ColorLensRoundedIcon from '@mui/icons-material/ColorLensRounded';
 import GridViewRounded from '@mui/icons-material/GridViewRounded';
 import WavingHandRoundedIcon from '@mui/icons-material/WavingHandRounded';
 import GamepadRoundedIcon from '@mui/icons-material/GamepadRounded';
 import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';
+import KeyboardDoubleArrowRightRoundedIcon from '@mui/icons-material/KeyboardDoubleArrowRightRounded';
 
 import { COLOURS, SIDEBAR_WIDTH } from '../styles/styles';
 const { primary, secondary, neutral } = COLOURS;
-type SectionTypes = 'Tailwind' | 'Animation' | 'Components' | 'JavaScript';
 
-const sections = [
+const SECTIONS = [
   { id: 1, name: 'Playground', icon: <GamepadRoundedIcon /> },
   { id: 2, name: 'Tailwind', icon: <ColorLensRoundedIcon /> },
   { id: 3, name: 'Animation', icon: <WavingHandRoundedIcon /> },
@@ -21,20 +21,19 @@ const sections = [
 ];
 
 const Sidebar = () => {
-  const [openSidebar, setOpenSidebar] = useState(false);
-
-  const handleClick = () => {
-    setOpenSidebar((prevState) => !prevState);
-  };
-
   return (
     <SidebarContainer>
       <StyledMenu>
-        {sections.map(({ name, icon }) => {
+        {SECTIONS.map(({ id, name, icon }) => {
           return (
             <StyledMenuItem key={name}>
-              <StyledIcon>{icon}</StyledIcon>
-              <StyledMenuHeading>{name.toUpperCase()}</StyledMenuHeading>
+              {id !== 1 && <StyledIcon>{icon}</StyledIcon>}
+              <StyledMenuHeading>{id === 1 ? name.toUpperCase() : name}</StyledMenuHeading>
+              {id === 1 && (
+                <StyledIcon>
+                  <KeyboardDoubleArrowRightRoundedIcon fontSize='large' />
+                </StyledIcon>
+              )}
             </StyledMenuItem>
           );
         })}
@@ -43,19 +42,15 @@ const Sidebar = () => {
   );
 };
 
-const ImageLogo = ({ imgSrc, heading }: { imgSrc: string; heading: string }) => (
-  <img src={imgSrc} alt={`${heading.toLowerCase()} logo`} />
-);
-
 const StyledMenuHeading = styled.div`
-  width: 5rem;
+  width: 9rem;
   display: none;
   color: ${neutral[50]};
 `;
 
 const StyledIcon = styled.div`
-  width: 2rem;
   color: ${neutral[50]};
+  opacity: 0.8;
 `;
 
 const StyledMenuItem = styled.div`
@@ -63,15 +58,18 @@ const StyledMenuItem = styled.div`
   height: 5rem;
   align-items: center;
   width: 100%;
-  gap: 0.5rem;
   color: ${primary[900]};
-  font-weight: 600;
   padding-left: 1rem;
+  gap: 1rem;
 
   &:first-child {
     background-color: ${primary[900]};
     color: ${primary[50]};
-    font-weight: bold;
+    font-weight: 600;
+
+    ${StyledIcon} {
+      color: ${secondary[500]};
+    }
   }
 
   &:last-child {
@@ -87,7 +85,8 @@ const StyledMenuItem = styled.div`
   }
 
   &:hover ${StyledIcon} {
-    color: ${secondary[400]};
+    color: ${secondary[500]};
+    opacity: 1;
   }
 `;
 
@@ -101,10 +100,11 @@ const SidebarContainer = styled.div`
   position: fixed;
   height: 100vh;
   width: ${SIDEBAR_WIDTH};
-  background-color: ${primary[500]};
+  background-color: ${primary[600]};
+  transition: width 200ms ease;
 
   &:hover {
-    width: 12rem;
+    width: 14rem;
   }
 
   &:hover ${StyledMenuHeading} {
