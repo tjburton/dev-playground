@@ -25,11 +25,13 @@ const Sidebar = () => {
     <SidebarContainer>
       <StyledMenu>
         {SECTIONS.map(({ id, name, icon }) => {
+          const isTitle = id === 1;
+
           return (
             <StyledMenuItem key={name}>
-              {id !== 1 && <StyledIcon>{icon}</StyledIcon>}
-              <StyledMenuHeading>{id === 1 ? name.toUpperCase() : name}</StyledMenuHeading>
-              {id === 1 && (
+              {!isTitle && <StyledIcon>{icon}</StyledIcon>}
+              <StyledMenuHeading>{isTitle ? name.toUpperCase() : name}</StyledMenuHeading>
+              {isTitle && (
                 <StyledIcon>
                   <KeyboardDoubleArrowRightRoundedIcon fontSize='large' />
                 </StyledIcon>
