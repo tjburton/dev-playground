@@ -1,14 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export { default as CodeRounded } from '@mui/icons-material/CodeRounded';
-export { default as ColorLensRoundedIcon } from '@mui/icons-material/ColorLensRounded';
-export { default as GridViewRounded } from '@mui/icons-material/GridViewRounded';
-export { default as WavingHandRoundedIcon } from '@mui/icons-material/WavingHandRounded';
-export { default as GamepadRoundedIcon } from '@mui/icons-material/GamepadRounded';
-export { default as DarkModeRoundedIcon } from '@mui/icons-material/DarkModeRounded';
-export { default as KeyboardDoubleArrowRightRoundedIcon } from '@mui/icons-material/KeyboardDoubleArrowRightRounded';
-
 import { COLOURS, SIDEBAR_WIDTH } from '../../styles/styles';
 const { primary, secondary, neutral } = COLOURS;
 

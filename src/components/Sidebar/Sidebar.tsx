@@ -1,11 +1,15 @@
+import { ReactElement } from 'react';
+import { SvgIconTypeMap } from '@mui/material/SvgIcon/SvgIcon';
+
+import CodeRounded from '@mui/icons-material/CodeRounded';
+import ColorLensRoundedIcon from '@mui/icons-material/ColorLensRounded';
+import GridViewRounded from '@mui/icons-material/GridViewRounded';
+import WavingHandRoundedIcon from '@mui/icons-material/WavingHandRounded';
+import GamepadRoundedIcon from '@mui/icons-material/GamepadRounded';
+import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';
+import KeyboardDoubleArrowRightRoundedIcon from '@mui/icons-material/KeyboardDoubleArrowRightRounded';
+
 import {
-  GamepadRoundedIcon,
-  ColorLensRoundedIcon,
-  WavingHandRoundedIcon,
-  GridViewRounded,
-  CodeRounded,
-  DarkModeRoundedIcon,
-  KeyboardDoubleArrowRightRoundedIcon,
   SidebarContainer,
   StyledMenu,
   StyledMenuItem,
@@ -19,7 +23,14 @@ import {
   // JavaScript will contain things like array methods, algorithms, react design patterns, etc.
 }
 
-const SECTIONS = [
+interface Sections {
+  id: number;
+  name: string;
+  icon: ReactElement<SvgIconTypeMap<{}, 'svg'>>;
+  route: string;
+}
+
+const SECTIONS: Sections[] = [
   { id: 1, name: 'Playground', icon: <GamepadRoundedIcon />, route: '/' },
   { id: 2, name: 'CSS', icon: <ColorLensRoundedIcon />, route: '/css' },
   {
