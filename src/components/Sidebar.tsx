@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import CodeRounded from '@mui/icons-material/CodeRounded';
@@ -12,25 +13,37 @@ import { COLOURS, SIDEBAR_WIDTH } from '../styles/styles';
 const { primary, secondary, neutral } = COLOURS;
 
 const SECTIONS = [
-  { id: 1, name: 'Playground', icon: <GamepadRoundedIcon /> },
-  { id: 2, name: 'Tailwind', icon: <ColorLensRoundedIcon /> },
-  { id: 3, name: 'Animation', icon: <WavingHandRoundedIcon /> },
-  { id: 4, name: 'Components', icon: <GridViewRounded /> },
-  { id: 5, name: 'JavaScript', icon: <CodeRounded /> },
-  { id: 6, name: 'Theme', icon: <DarkModeRoundedIcon /> },
+  { id: 1, name: 'Playground', icon: <GamepadRoundedIcon />, route: '/' },
+  { id: 2, name: 'CSS', icon: <ColorLensRoundedIcon />, route: '/css' },
+  {
+    id: 3,
+    name: 'Animation',
+    icon: <WavingHandRoundedIcon />,
+    route: '/animation',
+  },
+  {
+    id: 4,
+    name: 'Components',
+    icon: <GridViewRounded />,
+    route: '/components',
+  },
+  { id: 5, name: 'JavaScript', icon: <CodeRounded />, route: '/javascript' },
+  { id: 6, name: 'Theme', icon: <DarkModeRoundedIcon />, route: '/' },
 ];
 
 const Sidebar = () => {
   return (
     <SidebarContainer>
       <StyledMenu>
-        {SECTIONS.map(({ id, name, icon }) => {
+        {SECTIONS.map(({ id, name, icon, route }) => {
           const isTitle = id === 1;
 
           return (
-            <StyledMenuItem key={name}>
+            <StyledMenuItem to={route} key={name}>
               {!isTitle && <StyledIcon>{icon}</StyledIcon>}
-              <StyledMenuHeading>{isTitle ? name.toUpperCase() : name}</StyledMenuHeading>
+              <StyledMenuHeading>
+                {isTitle ? name.toUpperCase() : name}
+              </StyledMenuHeading>
               {isTitle && (
                 <StyledIcon>
                   <KeyboardDoubleArrowRightRoundedIcon fontSize='large' />
@@ -55,7 +68,7 @@ const StyledIcon = styled.div`
   opacity: 0.8;
 `;
 
-const StyledMenuItem = styled.div`
+const StyledMenuItem = styled(Link)`
   display: flex;
   height: 5rem;
   align-items: center;
