@@ -1,6 +1,3 @@
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-
 import CodeRounded from '@mui/icons-material/CodeRounded';
 import ColorLensRoundedIcon from '@mui/icons-material/ColorLensRounded';
 import GridViewRounded from '@mui/icons-material/GridViewRounded';
@@ -9,8 +6,19 @@ import GamepadRoundedIcon from '@mui/icons-material/GamepadRounded';
 import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';
 import KeyboardDoubleArrowRightRoundedIcon from '@mui/icons-material/KeyboardDoubleArrowRightRounded';
 
-import { COLOURS, SIDEBAR_WIDTH } from '../styles/styles';
-const { primary, secondary, neutral } = COLOURS;
+import {
+  SidebarContainer,
+  StyledMenu,
+  StyledMenuItem,
+  StyledIcon,
+  StyledMenuHeading,
+} from './Sidebar.styles';
+
+{
+  // CSS sections for Tailwind, StyledComponents, etc.
+  // Components will be the result of Tailwind practice and/ or animation
+  // JavaScript will contain things like array methods, algorithms, react design patterns, etc.
+}
 
 const SECTIONS = [
   { id: 1, name: 'Playground', icon: <GamepadRoundedIcon />, route: '/' },
@@ -56,75 +64,5 @@ const Sidebar = () => {
     </SidebarContainer>
   );
 };
-
-const StyledMenuHeading = styled.div`
-  width: 9rem;
-  display: none;
-  color: ${neutral[50]};
-`;
-
-const StyledIcon = styled.div`
-  color: ${neutral[50]};
-  opacity: 0.8;
-`;
-
-const StyledMenuItem = styled(Link)`
-  display: flex;
-  height: 5rem;
-  align-items: center;
-  width: 100%;
-  color: ${primary[900]};
-  padding-left: 1rem;
-  gap: 1rem;
-
-  &:first-child {
-    background-color: ${primary[900]};
-    color: ${primary[50]};
-    font-weight: 600;
-
-    ${StyledIcon} {
-      color: ${secondary[500]};
-    }
-  }
-
-  &:last-child {
-    position: absolute;
-    bottom: 0;
-    margin-top: auto;
-    background-color: ${primary[900]};
-    color: ${primary[50]};
-  }
-
-  &:hover {
-    background-color: ${primary[800]};
-  }
-
-  &:hover ${StyledIcon} {
-    color: ${secondary[500]};
-    opacity: 1;
-  }
-`;
-
-const StyledMenu = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const SidebarContainer = styled.div`
-  position: fixed;
-  height: 100vh;
-  width: ${SIDEBAR_WIDTH};
-  background-color: ${primary[600]};
-  transition: width 200ms ease;
-
-  &:hover {
-    width: 14rem;
-  }
-
-  &:hover ${StyledMenuHeading} {
-    display: block;
-  }
-`;
 
 export default Sidebar;
