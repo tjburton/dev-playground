@@ -1,12 +1,11 @@
-import CodeRounded from '@mui/icons-material/CodeRounded';
-import ColorLensRoundedIcon from '@mui/icons-material/ColorLensRounded';
-import GridViewRounded from '@mui/icons-material/GridViewRounded';
-import WavingHandRoundedIcon from '@mui/icons-material/WavingHandRounded';
-import GamepadRoundedIcon from '@mui/icons-material/GamepadRounded';
-import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';
-import KeyboardDoubleArrowRightRoundedIcon from '@mui/icons-material/KeyboardDoubleArrowRightRounded';
-
 import {
+  GamepadRoundedIcon,
+  ColorLensRoundedIcon,
+  WavingHandRoundedIcon,
+  GridViewRounded,
+  CodeRounded,
+  DarkModeRoundedIcon,
+  KeyboardDoubleArrowRightRoundedIcon,
   SidebarContainer,
   StyledMenu,
   StyledMenuItem,
