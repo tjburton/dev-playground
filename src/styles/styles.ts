@@ -90,3 +90,7 @@ export const COLOURS = {
 };
 
 export const SIDEBAR_WIDTH = '4rem';
+
+export const BREAKPOINTS = {
+  sm: '600px',
+};

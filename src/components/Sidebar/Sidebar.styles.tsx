@@ -1,17 +1,14 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { COLOURS, SIDEBAR_WIDTH } from '../../styles/styles';
+import { COLOURS, SIDEBAR_WIDTH, BREAKPOINTS } from '../../styles/styles';
 const { primary, secondary, neutral } = COLOURS;
+const { sm } = BREAKPOINTS;
 
 export const StyledMenuHeading = styled.div`
   width: 9rem;
   display: none;
   color: ${neutral[50]};
-
-  @media (max-width: 640px) {
-    display: none;
-  }
 `;
 
 export const StyledIcon = styled.div`
@@ -33,21 +30,21 @@ export const StyledMenuItem = styled(Link)`
     opacity: 1;
   }
 
-  @media (min-width: 640px) {
+  &:first-child {
+    background-color: ${primary[900]};
+    color: ${primary[50]};
+    font-weight: 600;
+
+    ${StyledIcon} {
+      color: ${secondary[500]};
+    }
+  }
+
+  @media (min-width: ${sm}) {
     gap: 1rem;
     height: 5rem;
     padding-left: 1rem;
     width: 100%;
-
-    &:first-child {
-      background-color: ${primary[900]};
-      color: ${primary[50]};
-      font-weight: 600;
-
-      ${StyledIcon} {
-        color: ${secondary[500]};
-      }
-    }
 
     &:last-child {
       position: absolute;
@@ -58,13 +55,10 @@ export const StyledMenuItem = styled(Link)`
     }
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: ${sm}) {
     max-height: ${SIDEBAR_WIDTH};
     width: 100%;
     justify-content: center;
-
-    &:first-child {
-    }
 
     &:last-child {
       display: none;
@@ -75,12 +69,12 @@ export const StyledMenuItem = styled(Link)`
 export const StyledMenu = styled.div`
   display: flex;
 
-  @media (min-width: 640px) {
+  @media (min-width: ${sm}) {
     flex-direction: column;
     align-items: center;
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: ${sm}) {
     width: 100%;
     justify-content: space-around;
   }
@@ -93,7 +87,7 @@ export const SidebarContainer = styled.div`
   background-color: ${primary[600]};
   transition: width 200ms ease;
 
-  @media (min-width: 640px) {
+  @media (min-width: ${sm}) {
     &:hover {
       width: 14rem;
     }
@@ -101,16 +95,16 @@ export const SidebarContainer = styled.div`
     &:hover ${StyledMenuHeading} {
       display: block;
 
-      @media (max-width: 640px) {
+      @media (max-width: ${sm}) {
         display: none;
       }
     }
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: ${sm}) {
     display: flex;
     bottom: 0;
     width: 100vw;
-    max-height: ${SIDEBAR_WIDTH};
+    height: ${SIDEBAR_WIDTH};
   }
 `;
