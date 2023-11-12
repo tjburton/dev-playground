@@ -57,7 +57,7 @@ const Sidebar = () => {
           const isTitle = id === 1;
 
           return (
-            <StyledMenuItem to={route} key={name}>
+            <StyledMenuItem to={route} key={name} end>
               {!isTitle && <StyledIcon>{icon}</StyledIcon>}
               <StyledMenuHeading>
                 {isTitle ? name.toUpperCase() : name}

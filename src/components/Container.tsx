@@ -1,9 +1,17 @@
 import { ReactNode } from 'react';
 import styled from 'styled-components';
 import { SIDEBAR_WIDTH } from '../styles/styles';
+import BackButton from './BackButton';
+import { useLocation } from 'react-router-dom';
 
 const Container = ({ children }: { children: ReactNode }) => {
-  return <StyledContainer>{children}</StyledContainer>;
+  const { pathname } = useLocation();
+  return (
+    <StyledContainer>
+      {pathname !== '/' && <BackButton />}
+      {children}
+    </StyledContainer>
+  );
 };
 
 const StyledContainer = styled.main`

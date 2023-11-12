@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { COLOURS, SIDEBAR_WIDTH, BREAKPOINTS } from '../../styles/styles';
@@ -16,7 +16,7 @@ export const StyledIcon = styled.div`
   opacity: 0.8;
 `;
 
-export const StyledMenuItem = styled(Link)`
+export const StyledMenuItem = styled(NavLink)`
   display: flex;
   align-items: center;
   color: ${primary[900]};
@@ -30,14 +30,16 @@ export const StyledMenuItem = styled(Link)`
     opacity: 1;
   }
 
+  &.active ${StyledIcon} {
+    color: ${secondary[500]};
+    opacity: 1;
+  }
+
   &:first-child {
     background-color: ${primary[900]};
     color: ${primary[50]};
     font-weight: 600;
-
-    ${StyledIcon} {
-      color: ${secondary[500]};
-    }
+    border-radius: 0.35rem;
   }
 
   @media (min-width: ${sm}) {
@@ -46,12 +48,16 @@ export const StyledMenuItem = styled(Link)`
     padding-left: 1rem;
     width: 100%;
 
+    &:first-child {
+      border-radius: 0 0.35rem 0.35rem 0.35rem;
+    }
+
     &:last-child {
       position: absolute;
       bottom: 0;
-      margin-top: auto;
       background-color: ${primary[900]};
       color: ${primary[50]};
+      border-radius: 0.35rem;
     }
   }
 
@@ -86,6 +92,7 @@ export const SidebarContainer = styled.div`
   width: ${SIDEBAR_WIDTH};
   background-color: ${primary[600]};
   transition: width 200ms ease;
+  border-radius: 0.35rem;
 
   @media (min-width: ${sm}) {
     &:hover {
