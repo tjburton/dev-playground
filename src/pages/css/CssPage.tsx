@@ -3,14 +3,17 @@ import CourseCard from '../../components/CourseCard';
 
 const COURSES = [
   {
+    id: 1,
     title: 'Wes Bos CSS Grid',
     imageUrl: '/src/assets/css/wesbos-css-grid.png',
   },
   {
+    id: 2,
     title: 'Wes Bos CSS Grid',
     imageUrl: '/src/assets/css/wesbos-css-grid.png',
   },
   {
+    id: 3,
     title: 'Wes Bos CSS Grid',
     imageUrl: '/src/assets/css/wesbos-css-grid.png',
   },
@@ -26,8 +29,8 @@ const CssPage = () => {
         </h2>
       </div>
       <div className='flex flex-row flex-wrap justify-around'>
-        {COURSES.map(({ title, imageUrl }) => {
-          return <CourseCard imageUrl={imageUrl} title={title} />;
+        {COURSES.map(({ id, title, imageUrl }) => {
+          return <CourseCard key={id} imageUrl={imageUrl} title={title} />;
         })}
       </div>
     </Fragment>

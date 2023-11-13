@@ -11,14 +11,16 @@ const CourseCard = ({
   title: string;
   path?: string;
 }) => {
+  const displayImages = typeof imageUrl === 'string';
+
   return (
     <Fragment>
       <div className='flex flex-row mt-5'>
         <Link to={`/css/courses/wesbos-css-grid${path ? `/${path}` : ''}`}>
           <div className='flex flex-col'>
             <div className='shadow-lg rounded-xl bg-slate-300'>
-              {imageUrl ? (
-                <ImageDiv imageUrl={imageUrl} />
+              {displayImages ? (
+                <ImageDiv $imageUrl={imageUrl} />
               ) : (
                 <CardDiv className='text-lg font-semibold mt-1 ml-auto mr-auto'>
                   {title}
@@ -48,8 +50,8 @@ const CardDiv = styled.div`
   padding: 1rem;
 `;
 
-const ImageDiv = styled.div<{ imageUrl: string }>`
-  background-image: url(${({ imageUrl }) => imageUrl});
+const ImageDiv = styled.div<{ $imageUrl: string }>`
+  background-image: url(${({ $imageUrl }) => $imageUrl});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

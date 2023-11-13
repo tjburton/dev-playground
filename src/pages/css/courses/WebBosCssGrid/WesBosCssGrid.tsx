@@ -2,6 +2,7 @@
 // https://cssgrid.io
 
 import Lessons from './lessons/Lessons';
+import CourseContainer from '../CourseContainer';
 import CourseCard from '../../../../components/CourseCard';
 import styled from 'styled-components';
 import { COLOURS } from '../../../../styles/styles';
@@ -16,6 +17,7 @@ const LESSONS = [
   },
 ];
 
+
 const WesBosGrid = () => {
   return (
     <div>
@@ -28,7 +30,7 @@ const WesBosGrid = () => {
           </Anchor>
         </span>
       </div>
-      <div className='flex flex-col space-y-4 md:flex-row md:justify-between md:space-y-4'>
+      <CourseContainer>
         {LESSONS.map(({ id, name }) => {
           return (
             <CourseCard
@@ -38,7 +40,7 @@ const WesBosGrid = () => {
             />
           );
         })}
-      </div>
+      </CourseContainer>
     </div>
   );
 };
