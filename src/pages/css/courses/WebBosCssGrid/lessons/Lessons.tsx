@@ -1,7 +1,7 @@
 const Lessons = () => {
   return (
     <div className='flex'>
-      <h1>HELLO!</h1>
+      <div className='p-10'>HELLO!</div>
     </div>
   );
 };

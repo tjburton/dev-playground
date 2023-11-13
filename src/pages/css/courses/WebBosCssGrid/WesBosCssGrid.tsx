@@ -2,45 +2,44 @@
 // https://cssgrid.io
 
 import Lessons from './lessons/Lessons';
-import CourseContainer from '../CourseContainer';
-import CourseCard from '../../../../components/CourseCard';
 import styled from 'styled-components';
 import { COLOURS } from '../../../../styles/styles';
+import LessonCard from '../../../../components/LessonCard';
 
 const LESSONS = [
-  { id: 3, name: 'CSS Grid Fundamentals', component: <Lessons /> },
-  { id: 4, name: 'CSS Grid Dev Tools', component: <Lessons /> },
+  { id: 3, title: 'CSS Grid Fundamentals', component: <Lessons /> },
+  { id: 4, title: 'CSS Grid Dev Tools', component: <Lessons /> },
   {
     id: 5,
-    name: 'CSS Grid Implicit vs Explicit Tracks',
+    title: 'CSS Grid Implicit vs Explicit Tracks',
     component: <Lessons />,
   },
 ];
 
-
 const WesBosGrid = () => {
   return (
     <div>
-      <h1 className='text-2xl'>Wes Bos CSS Grid</h1>
+      <h1 className='text-3xl font-bold'>Wes Bos CSS Grid</h1>
       <div className='mt-4'>
-        <span>
+        <h2 className='text-2xl font-semibold' id='courses'>
           Course link{': '}
           <Anchor href='https://cssgrid.io' className=''>
             cssgrid.io
           </Anchor>
-        </span>
+        </h2>
       </div>
-      <CourseContainer>
-        {LESSONS.map(({ id, name }) => {
+      <div className='mx-10'>
+        {LESSONS.map(({ id, title }) => {
           return (
-            <CourseCard
+            <LessonCard
               key={id}
-              title={name}
-              path={name.toLowerCase().replaceAll(' ', '-')}
+              id={id}
+              title={title}
+              path={title.toLowerCase().replaceAll(' ', '-')}
             />
           );
         })}
-      </CourseContainer>
+      </div>
     </div>
   );
 };

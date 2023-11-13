@@ -86,20 +86,25 @@ export const StyledMenu = styled.div`
   }
 `;
 
-export const SidebarContainer = styled.div`
+export const SideBarContainerClosed = `
   position: fixed;
   height: 100vh;
   width: ${SIDEBAR_WIDTH};
   background-color: ${primary[600]};
   transition: width 200ms ease;
   border-radius: 0.35rem;
+`;
+
+export const SidebarContainer = styled.div`
+  ${ SideBarContainerClosed }
 
   @media (min-width: ${sm}) {
-    &:hover {
+    &:hover,
+    &:active {
       width: 14rem;
     }
 
-    &:hover ${StyledMenuHeading} {
+    &:hover ${StyledMenuHeading}, &:active ${StyledMenuHeading} {
       display: block;
 
       @media (max-width: ${sm}) {
