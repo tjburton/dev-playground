@@ -1,9 +1,9 @@
 import { Fragment } from 'react';
-import { LESSONS } from '../Lessons';
+import { LESSONS } from '../../../../../../constants/Lessons';
 import {
   StyledLessonsContainer,
   StyledLessonsBody,
-} from '../LessonsContainer/LessonsContainer.styles';
+} from './LessonsContainer.styles';
 import { useParams } from 'react-router-dom';
 
 const LessonsContainer = () => {

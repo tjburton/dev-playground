@@ -6,10 +6,10 @@ import { useLocation } from 'react-router-dom';
 import {
   SideBarContainerClosed,
   SidebarContainer,
-} from './Sidebar/Sidebar.styles';
+} from './sidebar/Sidebar.styles';
 import { CourseContainerStyled } from './CourseContainer';
 
-const Container = ({ children }: { children: ReactNode }) => {
+const AppContainer = ({ children }: { children: ReactNode }) => {
   const { pathname } = useLocation();
   return (
     <MainContainer>
@@ -43,4 +43,4 @@ const MainContainer = styled.main`
   }
 `;
 
-export default Container;
+export default AppContainer;

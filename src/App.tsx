@@ -1,16 +1,16 @@
 import { Fragment } from 'react';
 import { Outlet } from 'react-router-dom';
 
-import Container from './components/Container';
-import Sidebar from './components/Sidebar/Sidebar';
+import AppContainer from './components/AppContainer';
+import Sidebar from './components/sidebar/Sidebar';
 
 const App = () => {
   return (
     <Fragment>
       <Sidebar />
-      <Container>
+      <AppContainer>
         <Outlet />
-      </Container>
+      </AppContainer>
     </Fragment>
   );
 };

@@ -1,15 +1,15 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import Home from './pages/Home';
-import CssHome from './pages/css/CssHome';
-import WesBosGrid from './pages/css/courses/WebBosCssGrid/WesBosCssGrid';
-import Error from './pages/Error';
+import Home from '../pages/Home';
+import CssHome from '../pages/css/CssHome';
+import WesBosGrid from '../pages/css/courses/wes-bos-css-grid/WesBosCssGrid';
+import Error from '../pages/Error';
 
-import App from './App';
-import AnimationHome from './pages/animation/AnimationHome';
-import ComponentsHome from './pages/components/ComponentsHome';
-import JavaScriptHome from './pages/javascript/JavaScriptHome';
-import LessonsContainer from './pages/css/courses/WebBosCssGrid/lessons/LessonsContainer/LessonsContainer';
+import App from '../App';
+import AnimationHome from '../pages/animation/AnimationHome';
+import ComponentsHome from '../pages/components/ComponentsHome';
+import JavaScriptHome from '../pages/javascript/JavaScriptHome';
+import LessonsContainer from '../pages/css/courses/wes-bos-css-grid/lessons/lessons-container/LessonsContainer';
 
 const router = createBrowserRouter([
   {

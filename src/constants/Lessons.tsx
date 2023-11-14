@@ -1,4 +1,4 @@
-import CssGridFundamentals from './CssGridFundamentals';
+import CssGridFundamentals from '../pages/css/courses/wes-bos-css-grid/lessons/CssGridFundamentals';
 
 export const LESSONS = [
   {

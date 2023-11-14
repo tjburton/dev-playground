@@ -3,7 +3,7 @@
 
 import styled from 'styled-components';
 import { COLOURS } from '../../../../styles/styles';
-import LESSONS from './lessons/Lessons';
+import LESSONS from '../../../../constants/Lessons';
 import LessonCard from '../../../../components/LessonCard';
 
 const WesBosGrid = () => {
