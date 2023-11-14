@@ -1,9 +1,9 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { COLOURS, SIDEBAR_WIDTH, BREAKPOINTS } from '../../styles/styles';
+import { COLOURS, SIDEBAR_WIDTH, MEDIA_BREAKPOINTS } from '../../styles/styles';
 const { primary, secondary, neutral } = COLOURS;
-const { sm } = BREAKPOINTS;
+const { sm } = MEDIA_BREAKPOINTS;
 
 export const StyledMenuHeading = styled.div`
   width: 9rem;
@@ -88,7 +88,7 @@ export const StyledMenu = styled.div`
 
 export const SideBarContainerClosed = `
   position: fixed;
-  height: 100vh;
+  height: 100dvh;
   width: ${SIDEBAR_WIDTH};
   background-color: ${primary[600]};
   transition: width 200ms ease;
@@ -96,7 +96,7 @@ export const SideBarContainerClosed = `
 `;
 
 export const SidebarContainer = styled.div`
-  ${ SideBarContainerClosed }
+  ${SideBarContainerClosed}
 
   @media (min-width: ${sm}) {
     &:hover,
@@ -116,7 +116,7 @@ export const SidebarContainer = styled.div`
   @media (max-width: ${sm}) {
     display: flex;
     bottom: 0;
-    width: 100vw;
+    width: 100dvw;
     height: ${SIDEBAR_WIDTH};
   }
 `;

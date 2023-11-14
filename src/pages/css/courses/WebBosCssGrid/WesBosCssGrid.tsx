@@ -1,18 +1,39 @@
 // Wes Bos Grid CSS Course
 // https://cssgrid.io
 
-import Lessons from './lessons/Lessons';
+import LessonsContainer from './lessons/LessonsContainer';
 import styled from 'styled-components';
 import { COLOURS } from '../../../../styles/styles';
 import LessonCard from '../../../../components/LessonCard';
+import CssGridFundamentals from './lessons/CssGridFundamentals';
 
-const LESSONS = [
-  { id: 3, title: 'CSS Grid Fundamentals', component: <Lessons /> },
-  { id: 4, title: 'CSS Grid Dev Tools', component: <Lessons /> },
+export const LESSONS = [
+  {
+    id: 3,
+    title: 'CSS Grid Fundamentals',
+    component: (
+      <LessonsContainer>
+        <CssGridFundamentals />
+      </LessonsContainer>
+    ),
+  },
+  {
+    id: 4,
+    title: 'CSS Grid Dev Tools',
+    component: (
+      <LessonsContainer>
+        <CssGridFundamentals />
+      </LessonsContainer>
+    ),
+  },
   {
     id: 5,
     title: 'CSS Grid Implicit vs Explicit Tracks',
-    component: <Lessons />,
+    component: (
+      <LessonsContainer>
+        <CssGridFundamentals />
+      </LessonsContainer>
+    ),
   },
 ];
 
@@ -28,7 +49,7 @@ const WesBosGrid = () => {
           </Anchor>
         </h2>
       </div>
-      <div className='mx-10'>
+      <div className='md:mx-1'>
         {LESSONS.map(({ id, title }) => {
           return (
             <LessonCard

@@ -19,7 +19,7 @@ const COURSES = [
   },
 ];
 
-const CssPage = () => {
+const CssHome = () => {
   return (
     <Fragment>
       <div className='flex flex-col space-y-5'>
@@ -37,4 +37,4 @@ const CssPage = () => {
   );
 };
 
-export default CssPage;
+export default CssHome;

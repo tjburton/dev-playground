@@ -4,7 +4,7 @@ import { COLOURS } from '../styles/styles';
 
 const LessonCard = ({
   id,
-  title = 'Testing Hello',
+  title,
   path,
 }: {
   id: number;
@@ -17,8 +17,11 @@ const LessonCard = ({
         to={`/css/courses/wesbos-css-grid${path ? `/${path}` : ''}`}
         className='flex flex-col'
       >
-        <Card className='shadow-lg'>
-          <div className='font-semibold'>{`${id}. ${title}`}</div>
+        <Card className='shadow-md'>
+          <div className='font-semibold flex space-x-2'>
+            <div>{id}.</div>
+            <div>{title}</div>
+          </div>
         </Card>
       </Link>
     </div>
@@ -35,7 +38,6 @@ const Card = styled.div`
   color: ${COLOURS.neutral[50]};
   border-radius: 0.5rem;
   align-items: center;
-  border-bottom: 1px solid ${COLOURS.primary[500]};
 
   &:hover {
     color: ${COLOURS.secondary[300]};

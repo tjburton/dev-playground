@@ -11,6 +11,12 @@ body {
   box-sizing: border-box;
 }
 
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 ::-webkit-scrollbar {
   width: 0.4rem;
 }

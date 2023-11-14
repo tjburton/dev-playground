@@ -91,6 +91,8 @@ export const COLOURS = {
 
 export const SIDEBAR_WIDTH = '4rem';
 
-export const BREAKPOINTS = {
+export const MOBILE_TOP_BAR_HEIGHT = '2rem';
+
+export const MEDIA_BREAKPOINTS = {
   sm: '600px',
 };

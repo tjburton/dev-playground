@@ -18,9 +18,9 @@ const Container = ({ children }: { children: ReactNode }) => {
   );
 };
 
+// TODO: Create Container for non lesson pages
 const StyledContainer = styled.main`
-  padding: 1rem;
-  min-height: 100vh;
+  min-height: 100dvh;
 
   &:active ${SidebarContainer} {
     ${SideBarContainerClosed}
@@ -32,6 +32,7 @@ const StyledContainer = styled.main`
 
   @media (max-width: 640px) {
     padding-bottom: ${SIDEBAR_WIDTH};
+    margin-top: 2rem;
   }
 `;
 
