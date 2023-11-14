@@ -3,30 +3,21 @@ import {
   MEDIA_BREAKPOINTS,
   MOBILE_TOP_BAR_HEIGHT,
   SIDEBAR_WIDTH,
-} from '../../../../../styles/styles';
-import { ReactNode } from 'react';
+} from '../../../../../../styles/styles';
 
 const { sm } = MEDIA_BREAKPOINTS;
-
-const LessonsContainer = ({ children }: { children: ReactNode }) => {
-  return (
-    <StyledLessonsContainer className='flex rounded-md'>
-      <StyledLessonsBody>{children}</StyledLessonsBody>
-    </StyledLessonsContainer>
-  );
-};
 
 const LESSON_COLOURS = {
   yellow: '#ffc600',
   black: '#272727',
 };
 
-const StyledLessonsBody = styled.div`
+export const StyledLessonsBody = styled.div`
   margin: 2rem;
   width: 100%;
 `;
 
-const StyledLessonsContainer = styled.div`
+export const StyledLessonsContainer = styled.div`
   font-weight: 900;
   font-size: 10px;
   color: ${LESSON_COLOURS.black};
@@ -63,5 +54,3 @@ export const ItemStyled = styled.div`
   font-size: 35px;
   background-color: ${LESSON_COLOURS.yellow};
 `;
-
-export default LessonsContainer;

@@ -94,5 +94,5 @@ export const SIDEBAR_WIDTH = '4rem';
 export const MOBILE_TOP_BAR_HEIGHT = '2rem';
 
 export const MEDIA_BREAKPOINTS = {
-  sm: '600px',
+  sm: '640px',
 };

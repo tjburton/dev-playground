@@ -1,41 +1,10 @@
 // Wes Bos Grid CSS Course
 // https://cssgrid.io
 
-import LessonsContainer from './lessons/LessonsContainer';
 import styled from 'styled-components';
 import { COLOURS } from '../../../../styles/styles';
+import LESSONS from './lessons/Lessons';
 import LessonCard from '../../../../components/LessonCard';
-import CssGridFundamentals from './lessons/CssGridFundamentals';
-
-export const LESSONS = [
-  {
-    id: 3,
-    title: 'CSS Grid Fundamentals',
-    component: (
-      <LessonsContainer>
-        <CssGridFundamentals />
-      </LessonsContainer>
-    ),
-  },
-  {
-    id: 4,
-    title: 'CSS Grid Dev Tools',
-    component: (
-      <LessonsContainer>
-        <CssGridFundamentals />
-      </LessonsContainer>
-    ),
-  },
-  {
-    id: 5,
-    title: 'CSS Grid Implicit vs Explicit Tracks',
-    component: (
-      <LessonsContainer>
-        <CssGridFundamentals />
-      </LessonsContainer>
-    ),
-  },
-];
 
 const WesBosGrid = () => {
   return (

@@ -6,7 +6,7 @@ import { COLOURS, MOBILE_TOP_BAR_HEIGHT } from '../styles/styles';
 
 const BackButton = () => {
   return (
-    <div className='flex align-middle md:hidden fixed top-0 bg-white w-[100dvh]'>
+    <div className='flex align-middle sm:hidden fixed top-0 bg-white w-[100dvh]'>
       <StyledLink to='..' relative='path'>
         <span className='text-md'>
           <BackIcon />

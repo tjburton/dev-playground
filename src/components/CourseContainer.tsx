@@ -2,10 +2,10 @@ import { ReactNode } from 'react';
 import styled from 'styled-components';
 
 const CourseContainer = ({ children }: { children: ReactNode }) => {
-  return <Container>{children}</Container>;
+  return <CourseContainerStyled>{children}</CourseContainerStyled>;
 };
 
-const Container = styled.div`
+export const CourseContainerStyled = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
