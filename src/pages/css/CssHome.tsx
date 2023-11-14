@@ -5,17 +5,17 @@ const COURSES = [
   {
     id: 1,
     title: 'Wes Bos CSS Grid',
-    imageUrl: '/src/assets/css/wesbos-css-grid.png',
+    imageUrl: '/src/assets/css/course-covers/wesbos-css-grid.png',
   },
   {
     id: 2,
     title: 'Wes Bos CSS Grid',
-    imageUrl: '/src/assets/css/wesbos-css-grid.png',
+    imageUrl: '/src/assets/css/course-covers/wesbos-css-grid.png',
   },
   {
     id: 3,
     title: 'Wes Bos CSS Grid',
-    imageUrl: '/src/assets/css/wesbos-css-grid.png',
+    imageUrl: '/src/assets/css/course-covers/wesbos-css-grid.png',
   },
 ];
 

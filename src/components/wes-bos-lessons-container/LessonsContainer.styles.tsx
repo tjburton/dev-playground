@@ -3,7 +3,7 @@ import {
   MEDIA_BREAKPOINTS,
   MOBILE_TOP_BAR_HEIGHT,
   SIDEBAR_WIDTH,
-} from '../../../../../../styles/styles';
+} from '../../styles/styles';
 
 const { sm } = MEDIA_BREAKPOINTS;
 
@@ -23,7 +23,7 @@ export const StyledLessonsContainer = styled.div`
   color: ${LESSON_COLOURS.black};
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
 
-  background-image: url('/src/pages/css/courses/WebBosCssGrid/images/topography.svg'),
+  background-image: url('/src/assets/css/courses/web-bos-grid/topography.svg'),
     linear-gradient(110deg, #f93d66, #6d47d9);
   background-size: 340px, auto;
   min-height: calc(92dvh);

@@ -1,16 +1,16 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
+import App from '../App';
+import Error from '../pages/Error';
 import Home from '../pages/Home';
 import CssHome from '../pages/css/CssHome';
 import WesBosGrid from '../pages/css/courses/wes-bos-css-grid/WesBosCssGrid';
-import Error from '../pages/Error';
-
-import App from '../App';
 import AnimationHome from '../pages/animation/AnimationHome';
 import ComponentsHome from '../pages/components/ComponentsHome';
 import JavaScriptHome from '../pages/javascript/JavaScriptHome';
-import LessonsContainer from '../pages/css/courses/wes-bos-css-grid/lessons/lessons-container/LessonsContainer';
+import LessonsContainer from '../components/wes-bos-lessons-container/LessonsContainer';
 
+// TODO: create a courses component for /css/courses
 const router = createBrowserRouter([
   {
     path: '/',

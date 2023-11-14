@@ -1,4 +1,5 @@
 import CssGridFundamentals from '../pages/css/courses/wes-bos-css-grid/lessons/CssGridFundamentals';
+import CssGridDevTools from '../pages/css/courses/wes-bos-css-grid/lessons/CssGridDevTools';
 
 export const LESSONS = [
   {
@@ -9,7 +10,7 @@ export const LESSONS = [
   {
     id: 4,
     title: 'CSS Grid Dev Tools',
-    component: <CssGridFundamentals />,
+    component: <CssGridDevTools />,
   },
   {
     id: 5,

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ItemStyled } from './lessons-container/LessonsContainer.styles';
+import { ItemStyled } from '../../../../../components/wes-bos-lessons-container/LessonsContainer.styles';
 
 const CssGridFundamentals = () => {
   return (

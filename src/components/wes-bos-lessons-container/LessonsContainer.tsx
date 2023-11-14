@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { LESSONS } from '../../../../../../constants/Lessons';
+import { LESSONS } from '../../constants/Lessons';
 import {
   StyledLessonsContainer,
   StyledLessonsBody,
