@@ -1,12 +1,11 @@
-import { Fragment } from 'react';
-import { LESSONS } from '../../constants/Lessons';
-import {
-  StyledLessonsContainer,
-  StyledLessonsBody,
-} from './LessonsContainer.styles';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 
-const LessonsContainer = () => {
+import { Lesson } from '../../types';
+
+import { StyledLessonsContainer, StyledLessonsBody } from './index.styles';
+
+const LessonsContainer = ({ lessons }: { lessons: Lesson[] }) => {
   const { lessonName } = useParams();
 
   const formattedLessonName = (name: string) =>
@@ -15,11 +14,10 @@ const LessonsContainer = () => {
   return (
     <StyledLessonsContainer className='flex rounded-md'>
       <StyledLessonsBody>
-        {LESSONS.map(({ id, title, component }) => {
+        {lessons.map(({ id, title, component }) => {
           return (
-            formattedLessonName(title) === lessonName && (
-              <Fragment key={id}>{component}</Fragment>
-            )
+            formattedLessonName(title) === lessonName &&
+            React.createElement(component, { key: id })
           );
         })}
       </StyledLessonsBody>

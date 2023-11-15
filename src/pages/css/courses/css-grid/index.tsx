@@ -3,10 +3,10 @@
 
 import styled from 'styled-components';
 import { COLOURS } from '../../../../styles/styles';
-import LESSONS from '../../../../constants/Lessons';
+import CSS_GRID_LESSONS from '../../../../constants/css-grid-lessons';
 import LessonCard from '../../../../components/LessonCard';
 
-const WesBosGrid = () => {
+const CssGridCoursePage = () => {
   return (
     <div>
       <h1 className='text-3xl font-bold'>Wes Bos CSS Grid</h1>
@@ -19,7 +19,7 @@ const WesBosGrid = () => {
         </h2>
       </div>
       <div className='md:mx-1'>
-        {LESSONS.map(({ id, title }) => {
+        {CSS_GRID_LESSONS.map(({ id, title }) => {
           return (
             <LessonCard
               key={id}
@@ -38,4 +38,4 @@ const Anchor = styled.a`
   color: ${COLOURS.primary[500]};
 `;
 
-export default WesBosGrid;
+export default CssGridCoursePage;

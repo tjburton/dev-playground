@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import Sidebar from '../components/sidebar/Sidebar';
+import Sidebar from '../components/sidebar';
 import Container from '../components/AppContainer';
 
 const Error = () => {

@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import AppContainer from './components/AppContainer';
-import Sidebar from './components/sidebar/Sidebar';
+import Sidebar from './components/sidebar';
 
 const App = () => {
   return (

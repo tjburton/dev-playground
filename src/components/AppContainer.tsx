@@ -6,21 +6,21 @@ import { useLocation } from 'react-router-dom';
 import {
   SideBarContainerClosed,
   SidebarContainer,
-} from './sidebar/Sidebar.styles';
+} from './sidebar/index.styles';
 import { CourseContainerStyled } from './CourseContainer';
 
 const AppContainer = ({ children }: { children: ReactNode }) => {
   const { pathname } = useLocation();
   return (
-    <MainContainer>
+    <Container>
       {pathname !== '/' && <BackButton />}
       {children}
-    </MainContainer>
+    </Container>
   );
 };
 
 // TODO: Create Container for non lesson pages
-const MainContainer = styled.main`
+const Container = styled.main`
   min-height: calc(100dvh);
   padding: 2rem;
 

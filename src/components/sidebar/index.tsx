@@ -15,7 +15,7 @@ import {
   StyledMenuItem,
   StyledIcon,
   StyledMenuHeading,
-} from './Sidebar.styles';
+} from './index.styles';
 
 {
   // CSS sections for Tailwind, StyledComponents, etc.
